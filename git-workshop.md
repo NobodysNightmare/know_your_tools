@@ -4,7 +4,7 @@
 
 # Intro - why git?
 
-* **distributed revision control system**
+* **distributed version control system**
 * initially designed and developed by Linus Torvalds for Linux kernel development in 2005
 * most widely adopted version control system for software development
 
