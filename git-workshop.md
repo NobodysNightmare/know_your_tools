@@ -68,10 +68,10 @@ http://nvie.com/posts/a-successful-git-branching-model/
 
 * "get that code from my branch into the `master` branch"
 * what if target branch has changed in between time? **merge conflict**
-  * trivial merges are made automatically
-    * different file changed
-    * same file, different location changed
-  * changes to the same file in similar locations must be resolved manually
+    * trivial merges are made automatically
+        * different file changed
+        * same file, different location changed
+    * changes to the same file in similar locations must be resolved manually
 
 ---
 
@@ -86,6 +86,8 @@ http://nvie.com/posts/a-successful-git-branching-model/
 
 ## Remotes
 
+![remotes](images/git-workshop/remotes.svg)
+
   * "other locations" of your project's source code
   * conventions:
     * "**origin**", services our code centrally
@@ -97,18 +99,18 @@ http://nvie.com/posts/a-successful-git-branching-model/
 
 ---
 
-## Prerequesites (on Ubuntu)
+## Prerequisites (on Ubuntu)
 
-```
+```bash
 sudo apt-get install git openssh-client
-ssh-key-gen -b 4096 -C'your@example.com'
+ssh-key-gen -b 4096 -C 'your.email@example.com'
 ```
 
 ---
 
 ## Configuring Git
 
-```
+```bash
 git config --global user.name 'Your Name'
 git config --global user.email 'your.email@example.com'
 ```
@@ -117,22 +119,26 @@ git config --global user.email 'your.email@example.com'
 
 ## Basic Commands
 
-```
+```bash
 git help
 ```
 
 ---
 
-```
-git init
+## Getting started...
+
+```bash
+git clone
 git status
 ```
+
+Copy repo URL here: http://tiny.cc/kp_git_ws
 
 ---
 
 ## Stuff to stage ...
 
-```
+```bash
 git add
 git rm
 git mv
@@ -142,15 +148,15 @@ git mv
 
 ## From Stage to Repository
 
-```
+```bash
 git commit
 ```
 
 Variants:
 
-```
-git commit -m'use describing message'
-git commit -am'go from working dir to repo directly'
+```bash
+git commit -m 'Use describing message'
+git commit -am 'Commit all the things!'
 ```
 
 Pro Tip: https://github.com/erlang/otp/wiki/Writing-good-commit-messages
@@ -161,7 +167,7 @@ Pro Tip: https://github.com/erlang/otp/wiki/Writing-good-commit-messages
 
 Warning, there be dragons ahead!
 
-```
+```bash
 git reset
 git revert
 git clean
@@ -169,25 +175,29 @@ git clean
 
 ---
 
-# Branches, Merges, Conflicts, ...
+## Branches, Merges, Conflicts, ...
 
-```
-git branches
-
+```bash
+git branch
 git checkout
-
 git merge
-
-git rebase
-
 ```
 
 ---
 
-# Working with remote repositories
+## Getting fancy with rebase
 
-```
-git remotes
+![rebase](images/git-workshop/rebase.svg)
+
+* "Cuts" your history and "glues" it onto the desired commit
+* actually does not cut anything, all commits are *replayed* (i.e. a copy is created)
+
+---
+
+## Working with remote repositories
+
+```bash
+git remote
 git clone
 
 git pull
@@ -198,11 +208,19 @@ git push
 
 # Goodies
 
-  * git stash
-  * use bash aliases: alias gs='\git status'
-  * git commit --amend
-  * git cherry-pick
-  * git instaweb --http=webrick
+## Improve your git experience
+
+* use bash aliases: alias gs='\git status'
+* Customize your console: https://github.com/git/git/tree/master/contrib/completion
+
+## Discover more git capabilities
+
+* git stash
+* git commit --amend
+* git cherry-pick
+* git reflog
+* git rerere
+* git instaweb --http=webrick
 
 ---
 
